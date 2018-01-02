@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CS496_P1_T3.iml" filepath="$PROJECT_DIR$/CS496_P1_T3.iml" />
+      <module fileurl="file://C:\Users\user\AndroidStudioProjects\iDiary\CS496_P1_T3.iml" filepath="C:\Users\user\AndroidStudioProjects\iDiary\CS496_P1_T3.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iDiary.iml" filepath="$PROJECT_DIR$/iDiary.iml" />
     </modules>
   </component>
 </project>
