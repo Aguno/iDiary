@@ -40,6 +40,9 @@ import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
+
 
 
 public class ReadContact extends Fragment {
@@ -73,76 +76,8 @@ public class ReadContact extends Fragment {
 
             @Override
             public void onClick(View v){
-    //change!!
-/*
-                //to do
-                ContentResolver cr = getActivity().getContentResolver();
-                Cursor cursor = cr.query(
-                        ContactsContract.Contacts.CONTENT_URI,null,null,null,null);
 
-                int ididx = cursor.getColumnIndex(ContactsContract.Contacts._ID);
-                int nameidx = cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME);
 
-                StringBuilder result = new StringBuilder();
-                while(cursor.moveToNext())
-                {
-                    result.append(cursor.getString(nameidx) + " :");
-
-                    String id = cursor.getString(ididx);
-                    Cursor cursor2 = cr.query(ContactsContract.CommonDataKinds.
-                                    Phone.CONTENT_URI,null,
-                            ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " =?",
-                            new String[]{id},null);
-
-                    int typeidx = cursor2.getColumnIndex(
-                            ContactsContract.CommonDataKinds.Phone.TYPE);
-
-                    int numidx = cursor2.getColumnIndex(
-                            ContactsContract.CommonDataKinds.Phone.NUMBER);
-
-                    while (cursor2.moveToNext()){
-                        String num = cursor2.getString(numidx);
-                        switch(cursor2.getInt(typeidx)){
-                            case ContactsContract.CommonDataKinds.Phone.TYPE_MOBILE:
-                                result.append(" Mobile:"+num);
-                                break;
-                            case ContactsContract.CommonDataKinds.Phone.TYPE_HOME:
-                                result.append(" Home:"+num);
-                                break;
-                            case ContactsContract.CommonDataKinds.Phone.TYPE_WORK:
-                                result.append(" Work:"+num);
-                                break;
-                        }
-                    }
-                    cursor2.close();
-                    result.append("\n");
-
-                }
-                cursor.close();
-
-                String str= result.toString();
-                ArrayList<String> arr_list = new ArrayList<String>();
-
-                String[] str1=str.split("\n");
-                for(int i=0;i<str1.length;i++){
-
-                    arr_list.add(str1[i]);
-                }
-                ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),
-                        android.R.layout.simple_list_item_1,  arr_list);
-                // Assign adapter to ListView
-                adapter.sort(new Comparator<String>(){
-
-                    @Override
-                    public int compare(String arg1,String arg0){
-                        return arg1.compareTo(arg0);
-                    }
-                });
-                //change!!
-                //listView.setAdapter(adapter);
-*/
-
-                //change!! start here
                 new JSONTask().execute("http://13.124.100.34:2000/post");
 
             }
