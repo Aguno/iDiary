@@ -395,6 +395,39 @@ public class ReadContact extends Fragment {
                 JSONArray ja = new JSONArray(result);
                 HashMap<String,String> item;
 
+                JSONArray sortedJsonArray = new JSONArray();
+
+                List<JSONObject> jsonValues = new ArrayList<JSONObject>();
+                for (int i = 0; i < ja.length(); i++) {
+                    jsonValues.add(ja.getJSONObject(i));
+                }
+                Collections.sort( jsonValues, new Comparator<JSONObject>() {
+                    //You can change "Name" with "ID" if you want to sort by ID
+                    private static final String KEY_NAME = "Name";
+
+                    @Override
+                    public int compare(JSONObject a, JSONObject b) {
+                        String valA = new String();
+                        String valB = new String();
+
+                        try {
+                            valA = (String) a.get(KEY_NAME);
+                            valB = (String) b.get(KEY_NAME);
+                        }
+                        catch (JSONException e) {
+                            //do something
+                        }
+
+                        return valA.compareTo(valB);
+                        //if you want to change the sort order, simply use the following:
+                        //return -valA.compareTo(valB);
+                    }
+                });
+
+                for (int i = 0; i < ja.length(); i++) {
+                    sortedJsonArray.put(jsonValues.get(i));
+                }
+
                 for(int i =0;i<ja.length();i++) {
                     JSONObject order = ja.getJSONObject(i);
                     item = new HashMap<String,String>();

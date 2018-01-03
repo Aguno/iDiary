@@ -77,7 +77,7 @@ public class Diary extends AppCompatActivity {
             public void onClick(View view) {
                 //이전페이지 전환
                 String date_temp = date.getText().toString();
-                String script_temp = date.getText().toString();
+                String script_temp = script.getText().toString();
                 json_temp = new JSONObject();
                 try {
                     json_temp.put("date", date_temp);
