@@ -51,6 +51,11 @@
             android:label="iDiary">
 
         </activity>
+
+        <activity android:name=".Diary"
+            android:label="iDiary">
+
+        </activity>
     </application>
 
 </manifest>
