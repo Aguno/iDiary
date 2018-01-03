@@ -124,6 +124,8 @@ public class ReadContact extends Fragment {
                                 Log.d("response", response.toString());
                                 JSONObject object = response.getJSONObject();
                                 getData(object);
+                                GraphRequest nextReq = response.getRequestForPagedResults(GraphResponse.PagingDirection.NEXT);
+
                             }
                         });
                 Bundle paramaters = new Bundle();
@@ -163,8 +165,8 @@ public class ReadContact extends Fragment {
 
                     try {
 
-                        school.put("name:",name);
-                        school.put("number:",number);
+                        school.put("name",name);
+                        school.put("number",number);
                         school2.put(school);
                         //txtFriends.setText(school2.toString()); //보여주기
 
