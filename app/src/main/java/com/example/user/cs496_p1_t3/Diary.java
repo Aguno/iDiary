@@ -85,15 +85,15 @@ public class Diary extends AppCompatActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                new uploading().execute("http://13.124.100.34:2000/upload");
+                new uploading().execute("http://13.124.100.34:4000/upload");
             }
         });
 
-        upload.setOnClickListener(new View.OnClickListener() {
+        download.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //이전페이지 전환
-                new downloading().execute("http://13.124.100.34:2000/memos");
+                new downloading().execute("http://13.124.100.34:4000/memos");
             }
         });
 

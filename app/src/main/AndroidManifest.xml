@@ -52,8 +52,7 @@
 
         </activity>
 
-        <activity android:name=".Diary"
-            android:label="iDiary">
+        <activity android:name=".Diary">
 
         </activity>
     </application>
